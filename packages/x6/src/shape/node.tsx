@@ -9,7 +9,9 @@ CustomNode.config({
   width: 120,
   height: 50,
   shape: 'react-shape',
-  component: <NodeComponent />,
+  component({ node }: { node: Node }) {
+    return <NodeComponent node={node} />;
+  },
   ports: {
     groups: {
       in: {
