@@ -5,7 +5,7 @@ interface Props {
   
 }
 
-export const CustomNode: React.FC<Props> = props => {
+export const NodeComponent: React.FC<Props> = props => {
   return (
     <div className={styles.container}>
       node

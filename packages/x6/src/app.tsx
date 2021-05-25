@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
-import { Graph } from "@antv/x6";
+import React, { useEffect, useRef } from 'react';
+import { Graph } from '@antv/x6';
 import '@antv/x6-react-shape';
-import { CustomNode } from "./component/node";
-import styles from "./app.module.scss";
+import { CustomNode } from './shape/node';
+import styles from './app.module.scss';
 
 export const App: React.FC<{}> = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -13,44 +13,42 @@ export const App: React.FC<{}> = () => {
       grid: true,
     });
 
-    const source = graph.addNode({
-      x: 120,
-      y: 50,
-      width: 120,
-      height: 50,
-      shape: "react-shape",
-      component: <CustomNode />,
-    });
+    const source = graph.addNode(
+      new CustomNode({
+        x: 520,
+        y: 50,
+        ports: [
+          { id: '1', group: 'in' },
+          { id: '2', group: 'out' },
+        ],
+      })
+    );
 
-    const target = graph.addNode({
-      x: 320,
-      y: 260,
-      width: 120,
-      height: 50,
-      shape: "react-shape",
-      component(node: Node) {
-        return (
-          <div
-            style={{
-              color: "#fff",
-              width: "100%",
-              height: "100%",
-              textAlign: "center",
-              lineHeight: "50px",
-              borderRadius: 4,
-              background: "#fff",
-            }}
-          >
-            #fff
-          </div>
-        );
+    const target = graph.addNode(
+      new CustomNode({
+        x: 720,
+        y: 260,
+        ports: [
+          { id: '3', group: 'in' },
+          { id: '4', group: 'out' },
+        ],
+      })
+    );
+
+    graph.addEdge({
+      source: {
+        cell: source,
+        port: '2'
+      },
+      target: {
+        cell: target,
+        port: '3',
       },
     });
 
-    graph.addEdge({
-      source,
-      target,
-    });
+    return () => {
+      graph.dispose();
+    };
   }, []);
 
   return (
