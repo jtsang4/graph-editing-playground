@@ -17,6 +17,9 @@ export const App: React.FC<{}> = () => {
       new CustomNode({
         x: 520,
         y: 50,
+        data: {
+          label: 'Hello'
+        },
         ports: [
           { id: '1', group: 'in' },
           { id: '2', group: 'out' },
@@ -28,6 +31,9 @@ export const App: React.FC<{}> = () => {
       new CustomNode({
         x: 720,
         y: 260,
+        data: {
+          label: 'World!'
+        },
         ports: [
           { id: '3', group: 'in' },
           { id: '4', group: 'out' },

@@ -7,3 +7,4 @@ yarn-error.log
 coverage
 dist
 lib
+.DS_STORE
