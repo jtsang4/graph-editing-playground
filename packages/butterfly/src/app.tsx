@@ -6,13 +6,13 @@ const endpoints = [
   {
     id: 'right',
     orientation: [1, 0],
-    pos: [0, 0.5]
+    pos: [0, 0.5],
   },
   {
     id: 'left',
     orientation: [-1, 0],
-    pos: [0, 0.5]
-  }
+    pos: [0, 0.5],
+  },
 ];
 
 const data = {
@@ -23,25 +23,27 @@ const data = {
       top: 100,
       render() {
         return (
-          <div style={{width:'250px',textAlign:'center',backgroundColor:'blanchedalmond'}}>
+          <div
+            style={{
+              width: '250px',
+              textAlign: 'center',
+              backgroundColor: 'blanchedalmond',
+            }}
+          >
             测试group
           </div>
-        )
-      }
-    }
+        );
+      },
+    },
   ],
   nodes: [
     {
       id: '1',
-      group:'1',
+      group: '1',
       endpoints: endpoints,
       render() {
-        return (
-          <div>
-            测试节点1
-          </div>
-        );
-      }
+        return <div>测试节点1</div>;
+      },
     },
     {
       id: '2',
@@ -49,19 +51,18 @@ const data = {
       left: 300,
       endpoints: endpoints,
       render() {
-        return (
-          <div>
-            测试节点2
-          </div>
-        );
-      }
+        return <div>测试节点2</div>;
+      },
     },
     {
       id: '3',
       top: 25,
       left: 600,
       endpoints: endpoints,
-    }
+      render() {
+        return <div>测试节点3</div>;
+      },
+    },
   ],
   edges: [
     {
@@ -72,8 +73,8 @@ const data = {
       target: 'left',
       labelRender: () => {
         return '测试label';
-      }
-    }
+      },
+    },
   ],
 };
 
