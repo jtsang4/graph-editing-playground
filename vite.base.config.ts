@@ -7,6 +7,9 @@ export default defineConfig({
   server: {
     port: 2333,
   },
+  resolve: {
+    mainFields: ['module', 'es', 'jsnext:main', 'jsnext'],
+  },
   plugins: [reactRefresh(), WindiCSS()],
   optimizeDeps: {
     entries: 'index.html',
