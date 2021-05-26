@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
+import ReactDOM from 'react-dom';
 import { dia, shapes } from 'jointjs';
 import 'jointjs/dist/joint.css';
-import { CustomNode } from './shape/node';
+import { NodeComponent } from './component/node';
 import styles from './app.module.scss';
 
 export const App: React.FC<{}> = () => {
@@ -39,7 +40,10 @@ export const App: React.FC<{}> = () => {
             position: { name: 'bottom' },
           },
         },
-        items: [{id: '1', group: 'in'}, { id: '2', group: 'out' }]
+        items: [
+          { id: '1', group: 'in' },
+          { id: '2', group: 'out' },
+        ],
       },
     });
     rect.attr({
@@ -48,6 +52,60 @@ export const App: React.FC<{}> = () => {
       },
     });
     rect.addTo(graph);
+
+    const basicRect = new shapes.basic.Rect({
+      size: {
+        width: 120,
+        height: 50,
+      },
+      position: {
+        x: 720,
+        y: 50,
+      },
+      ports: {
+        groups: {
+          in: {
+            position: { name: 'top' },
+          },
+          out: {
+            position: { name: 'bottom' },
+          },
+        },
+        items: [
+          { id: '1', group: 'in' },
+          { id: '2', group: 'out' },
+        ],
+      },
+      markup: [
+        {
+          tagName: 'foreignObject',
+          selector: 'fo',
+          attributes: { width: 120, height: 50 },
+          children: [
+            {
+              tagName: 'body',
+              selector: 'foBody',
+              namespaceUri: 'http://www.w3.org/1999/xhtml',
+              attributes: {
+                xmlns: 'http://www.w3.org/1999/xhtml',
+                style:
+                  'width: 100%; height: 100%; background: transparent; position: static; margin: 0; padding: 0; overflow: visible;',
+              },
+              children: [
+                {
+                  tagName: 'div',
+                  selector: 'content',
+                  attributes: { style: 'width: 100%; height: 100%;' },
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    });
+    basicRect.addTo(graph);
+    const rectView = basicRect.findView(paper);
+    ReactDOM.render(<NodeComponent label="Hello" />, (rectView as any).selectors.content);
 
     const rect2 = rect.clone() as shapes.standard.Rectangle;
     rect2.position(720, 260);
