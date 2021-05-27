@@ -18,6 +18,9 @@
     "url": "git+https://github.com/wtzeng1/graph-editing-playground.git"
   },
   "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
