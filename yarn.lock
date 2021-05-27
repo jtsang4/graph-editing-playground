@@ -935,6 +935,15 @@
     npmlog "^4.1.2"
     write-file-atomic "^3.0.3"
 
+"@logicflow/core@^0.4.8":
+  version "0.4.8"
+  resolved "https://registry.yarnpkg.com/@logicflow/core/-/core-0.4.8.tgz#54b5ef604a39dc3d980c31e69661ee02e7950515"
+  integrity sha512-CpVOALxiRvfa3CZLgRiQUMn08/TrUlurst45HcF5448g9CkyX21Nk7smHoj/AybgVkzPpVXsAuxqmc5zh5Qraw==
+  dependencies:
+    "@types/mousetrap" "^1.6.4"
+    mousetrap "^1.6.5"
+    preact "^10.4.8"
+
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.4.tgz#d4b3549a5db5de2683e0c1071ab4f140904bbf69"
@@ -1183,6 +1192,11 @@
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.1.tgz#283f669ff76d7b8260df8ab7a4262cc83d988256"
   integrity sha512-fZQQafSREFyuZcdWFAExYjBiCL7AUCdgsk80iO0q4yihYYdcIiH28CcuPTGFgLOCC8RlW49GSQxdHwZP+I7CNg==
+
+"@types/mousetrap@^1.6.4":
+  version "1.6.8"
+  resolved "https://registry.yarnpkg.com/@types/mousetrap/-/mousetrap-1.6.8.tgz#448929e6dc21126392830465fdb9d4a2cfc16a88"
+  integrity sha512-zTqjvgCUT5EoXqbqmd8iJMb4NJqyV/V7pK7AIKq7qcaAsJIpGlTVJS1HQM6YkdHCdnkNSbhcQI7MXYxFfE3iCA==
 
 "@types/node@*":
   version "15.6.1"
@@ -5075,6 +5089,11 @@ postcss@^8.2.1, postcss@^8.2.6:
     colorette "^1.2.2"
     nanoid "^3.1.23"
     source-map-js "^0.6.2"
+
+preact@^10.4.8:
+  version "10.5.13"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.5.13.tgz#85f6c9197ecd736ce8e3bec044d08fd1330fa019"
+  integrity sha512-q/vlKIGNwzTLu+jCcvywgGrt+H/1P/oIRSD6mV4ln3hmlC+Aa34C7yfPI4+5bzW8pONyVXYS7SvXosy2dKKtWQ==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
