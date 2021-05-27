@@ -29,6 +29,7 @@
   "dependencies": {
     "butterfly-dag": "^4.0.6",
     "butterfly-react": "^0.0.23-beta",
+    "immer": "^9.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "regenerator-runtime": "^0.13.7"
