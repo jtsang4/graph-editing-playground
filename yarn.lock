@@ -2359,6 +2359,11 @@ dezalgo@^1.0.0:
     asap "^2.0.0"
     wrappy "1"
 
+diagram-maker@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/diagram-maker/-/diagram-maker-1.2.0.tgz#6a7ec6976d490311281720c7a6cf61a62ab44bbf"
+  integrity sha512-eePBSza41Iw/q0x7ZJ8EI+rhoVvM/+PX/ebbhSYFhsKd7viqI/q+4sIinjp1mtNNh+WWcCorMGszGRvyIlJHKA==
+
 dir-glob@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/dir-glob/-/dir-glob-3.0.1.tgz#56dbf73d992a4a93ba1584f4534063fd2e41717f"
