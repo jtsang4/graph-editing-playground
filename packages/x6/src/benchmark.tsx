@@ -1,0 +1,79 @@
+import React, { useEffect, useRef } from 'react';
+import { Graph } from '@antv/x6';
+import '@antv/x6-react-shape';
+import { CustomNode } from './shape/node';
+import styles from './app.module.scss';
+
+export const Benchmark: React.FC<{}> = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const graph = new Graph({
+      container: containerRef.current!,
+      grid: true,
+    });
+
+    const source = graph.addNode(
+      new CustomNode({
+        x: 520,
+        y: 50,
+        data: {
+          label: 'Hello',
+        },
+        ports: [
+          { id: '1', group: 'in' },
+          { id: '2', group: 'out' },
+        ],
+      })
+    );
+
+    const target = graph.addNode(
+      new CustomNode({
+        x: 720,
+        y: 260,
+        data: {
+          label: 'World!',
+        },
+        ports: [
+          { id: '3', group: 'in' },
+          { id: '4', group: 'out' },
+        ],
+      })
+    );
+
+    const nodes = Array(498)
+      .fill(1)
+      .map((item, index) => {
+        return new CustomNode({
+          x: 720 + 5 * index,
+          y: 260 + 5 * index,
+          data: {
+            label: 'World!',
+          },
+          ports: [{ group: 'in' }, { group: 'out' }],
+        });
+      });
+    graph.addCell(nodes);
+
+    graph.addEdge({
+      source: {
+        cell: source,
+        port: '2',
+      },
+      target: {
+        cell: target,
+        port: '3',
+      },
+    });
+
+    return () => {
+      graph.dispose();
+    };
+  }, []);
+
+  return (
+    <div className={styles.app}>
+      <div className={styles.graph} ref={containerRef} />
+    </div>
+  );
+};

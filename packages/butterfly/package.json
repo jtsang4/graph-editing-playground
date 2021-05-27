@@ -29,14 +29,17 @@
   "dependencies": {
     "butterfly-dag": "^4.0.6",
     "butterfly-react": "^0.0.23-beta",
+    "history": "^4.10.1",
     "immer": "^9.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
     "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
     "@types/react": "^17.0.6",
     "@types/react-dom": "^17.0.5",
+    "@types/react-router-dom": "^5.1.7",
     "@vitejs/plugin-react-refresh": "^1.3.3",
     "less": "^4.1.1",
     "prop-types": "^15.7.2",

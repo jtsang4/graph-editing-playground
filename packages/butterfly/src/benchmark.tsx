@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ReactButterfly from 'butterfly-react';
-import produce from 'immer';
 import { NodeComponent } from './component/node';
 import styles from './app.module.scss';
 
@@ -17,7 +16,7 @@ const endpoints = [
   },
 ];
 
-export const App: React.FC<{}> = () => {
+export const Benchmark: React.FC<{}> = () => {
   const [data, setData] = useState({
     nodes: [
       {
@@ -38,6 +37,19 @@ export const App: React.FC<{}> = () => {
           return <NodeComponent label="World!" />;
         },
       },
+      ...Array(498)
+        .fill(1)
+        .map((item, index) => {
+          return {
+            id: index.toString(),
+            top: 260 + 5 * index,
+            left: 720 + 5 * index,
+            endpoints: endpoints,
+            render() {
+              return <NodeComponent label="World!" />;
+            },
+          };
+        }),
     ],
     edges: [
       {
@@ -49,22 +61,6 @@ export const App: React.FC<{}> = () => {
       },
     ],
   });
-
-  useEffect(() => {
-    setTimeout(() => {
-      console.log('更新画布');
-      setData(
-        produce((prevData) => {
-          prevData.nodes[0].render = () => {
-            return <NodeComponent label="Hello," />;
-          };
-          prevData.nodes[1].render = () => {
-            return <NodeComponent label="World." />;
-          };
-        })
-      );
-    }, 2000);
-  }, []);
 
   return (
     <div className={styles.app}>
