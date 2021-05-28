@@ -8,7 +8,6 @@ class CustomNode extends ReactShape {}
 CustomNode.config({
   width: 120,
   height: 50,
-  shape: 'react-shape',
   component({ node }: { node: Node }) {
     return <NodeComponent node={node} />;
   },
