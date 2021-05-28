@@ -1,5 +1,4 @@
 import React from 'react';
-import type { Node } from '@antv/x6';
 import styles from './index.module.scss';
 
 interface Props {
