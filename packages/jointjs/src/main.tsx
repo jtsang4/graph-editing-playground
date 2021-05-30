@@ -2,6 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "virtual:windi.css";
 import "virtual:windi-devtools";
-import { App } from "./app";
+import { IRouter } from './router';
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<IRouter />, document.getElementById("root"));
